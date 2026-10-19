@@ -1,0 +1,78 @@
+export const pricingCopy = {
+  eyebrow: "Pricing",
+  title: "Simple pricing that grows with your store",
+  lead: "Waitlist members lock in founding-member pricing for life. Cancel any time.",
+  toggle: {
+    monthly: "Monthly",
+    yearly: "Yearly",
+    saveBadge: "Save 20%",
+    accessibleName: "Billing period",
+    liveMonthly: "Showing monthly prices",
+    liveYearly: "Showing yearly prices",
+  },
+  suffix: {
+    monthly: "/month",
+    yearly: "/month, billed yearly",
+  },
+  footnote:
+    "Prices in USD, excluding taxes. Flowly is a demo product — no payment is ever taken.",
+  cta: "Join the waitlist",
+  plans: [
+    {
+      id: "starter",
+      name: "Starter",
+      description: "For new stores finding their first channels.",
+      monthlyPrice: 0,
+      yearlyPrice: 0,
+      yearlyNote: "Free forever",
+      monthlyNote: "Free forever",
+      popular: false,
+      features: [
+        "1 store",
+        "Revenue & orders dashboard",
+        "90 days of history",
+        "Weekly digest email",
+        "Community support",
+      ],
+    },
+    {
+      id: "growth",
+      name: "Growth",
+      description: "For growing stores that run paid campaigns.",
+      monthlyPrice: 29,
+      yearlyPrice: 23,
+      yearlyNote: "Billed $276 yearly",
+      monthlyNote: "Billed monthly",
+      popular: true,
+      badge: "Most popular",
+      features: [
+        "Up to 3 stores",
+        "Everything in Starter",
+        "Channel attribution",
+        "Smart alerts (email & Slack)",
+        "24 months of history",
+        "Goals & forecasts",
+      ],
+    },
+    {
+      id: "scale",
+      name: "Scale",
+      description: "For multi-brand teams that need answers fast.",
+      monthlyPrice: 79,
+      yearlyPrice: 63,
+      yearlyNote: "Billed $756 yearly",
+      monthlyNote: "Billed monthly",
+      popular: false,
+      features: [
+        "Unlimited stores",
+        "Everything in Growth",
+        "Team seats & roles",
+        "Custom metrics",
+        "API & CSV export",
+        "Priority support",
+      ],
+    },
+  ],
+} as const;
+
+export type Plan = (typeof pricingCopy.plans)[number];
